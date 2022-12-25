@@ -1,13 +1,14 @@
 require './taxes_calculator'
 
 class InvoiceReader
-  attr_accessor :total_taxes, :total_sales
+  attr_accessor :total_taxes, :total_sales, :items_data
   attr_reader :file_name
 
   def initialize(file_name)
     @file_name = file_name
     @total_taxes = 0
     @total_sales = 0
+    @items_data = []
   end
 
   def call
@@ -27,7 +28,10 @@ class InvoiceReader
       total_item_price = (item_price + item_taxes) * number_of_items
       @total_sales += total_item_price
 
+      items_data << "#{number_of_items} #{item_name}: #{total_item_price.truncate(2)}"
       puts "#{number_of_items} #{item_name}: #{total_item_price.truncate(2)}"
     end
+
+    items_data
   end
 end
