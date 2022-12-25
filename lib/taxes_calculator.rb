@@ -2,8 +2,8 @@
 ### import sales 5% no exceptions
 
 class TaxesCalculator
-  FOOD_ITEMS = File.readlines('food_list.txt')
-  MEDICAL_ITEMS = File.readlines('medical_items_list.txt')
+  FOOD_ITEMS = File.readlines('./fixtures/food_list.txt')
+  MEDICAL_ITEMS = File.readlines('./fixtures/medical_items_list.txt')
 
   def self.call(item_name, item_price)
     item_taxes = item_price * 0.1

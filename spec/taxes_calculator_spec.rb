@@ -1,4 +1,4 @@
-require_relative '../taxes_calculator'
+require_relative '../lib/taxes_calculator'
 
 RSpec.describe TaxesCalculator do
   describe '#call' do

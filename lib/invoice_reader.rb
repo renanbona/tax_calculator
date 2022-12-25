@@ -1,4 +1,4 @@
-require './taxes_calculator'
+require_relative './taxes_calculator'
 
 class InvoiceReader
   attr_accessor :total_taxes, :total_sales, :items_data
