@@ -29,7 +29,7 @@ class InvoiceReader
       @total_sales += total_item_price
 
       items_data << "#{number_of_items} #{item_name}: #{total_item_price.truncate(2)}"
-      puts "#{number_of_items} #{item_name}: #{total_item_price.truncate(2)}"
+      puts "#{number_of_items} #{item_name}: #{format('%.2f', total_item_price)}"
     end
 
     items_data
